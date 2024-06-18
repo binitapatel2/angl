@@ -1,0 +1,26 @@
+<div>
+  <mat-card mat-raised-button matTooltip="Info about the action"
+  [matTooltipClass]="'tooltip'"
+  [matTooltipShowDelay]="showDelay.value"
+  [matTooltipHideDelay]="hideDelay.value"
+  aria-label="Button that displays a tooltip with a customized delay in showing and hiding"
+  class="example-card" appearance="outlined" *ngFor="let item of data">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{item.name}}</mat-card-title>
+      <mat-card-subtitle>{{item.email}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

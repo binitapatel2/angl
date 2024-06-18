@@ -1,0 +1,41 @@
+<div>
+    <h1>SingUp</h1>
+    <form [formGroup] = "applyForm" (ngSubmit) = "onSubmit()">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password">
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div>
+    <form [formGroup] = "getNames" (ngSubmit) = "onDelete()">
+        <label for="name">Name:</label>
+        <input type="name" id="name" formControlName="name">
+        <select formControlName="id" class="form-control">  
+          <option disabled>Select Website</option>  
+          <option>Choose Website</option>  
+          <option *ngFor="let item of data" [ngValue]="item._id">{{item.email}}</option>  
+      </select> 
+        <button type="submit">Delete</button>
+    </form>
+</div>
+<div>
+    <table>
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td>{{ item.email }}</td>
+            <td>{{ item.password}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<h1>new component</h1>

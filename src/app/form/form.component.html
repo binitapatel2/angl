@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>My Form</h2>
+    
+  <div>
+    <form [formGroup]="applyForm" (ngSubmit)="submitApp()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name">
+          
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+          
+      <label for="age">Last Name:</label>
+      <input type="number" id="age" formControlName="age">
+          
+      <button type="submit">Submit</button>
+    </form>
+    <h1>{{title.name}} {{title.email}} {{title.age}}  </h1>
+  </div>
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>{{ item.email }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.age }}</td>
+      <td>
+        <button (click)="edit(item)" >Edit</button>
+        <button (click)="delete(item._id)" >Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngFor="let item of data">
+  <h1>{{item.name}}</h1>
+</div>
+</div>
+
+  
